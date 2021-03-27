@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <title>Flight Price Prediction</title>
+    <link rel="stylesheet" type= "text/css" href={{ url_for('static',filename="styles/style.css") }}>
+</head>
+<body background="{{url_for('static',filename='airplane.png')}}" align="middle">
+    <nav class="navbar" >Flight Price Prediction</nav>
+    <div class="container">
+    <form action="\predict" method="post">
+        <div>
+        <h3>Departure Date</h3>
+        <input type="datetime-local" name="Dep_Time" required="required">
+        </div>
+        <div>
+        <h3>Arrival Date</h3>
+        <input type="datetime-local" name="Arrival_Time" required="required">
+        </div>
+        <div>
+        <h3>Total Stops</h3>
+        <select name="stops" required="required">
+            <option value="0">Non-Stop</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        </div>
+        <div>
+            <h3>Airline</h3>
+            <select name="airline" id="airline" required="required">
+                <option value="Jet Airways">Jet Airways</option>
+                <option value="IndiGo">IndiGo</option>
+                <option value="Air India">Air India</option>
+                <option value="Multiple carriers">Multiple carriers</option>
+                <option value="SpiceJet">SpiceJet</option>
+                <option value="Vistara">Vistara</option>
+                <option value="Air Asia">Air Asia</option>
+                <option value="GoAir">GoAir</option>
+                <option value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+                <option value="Jet Airways Business">Jet Airways Business</option>
+                <option value="Vistara Premium economy">Vistara Premium economy</option>
+                <option value="Trujet">Trujet</option>
+            </select>
+        </div>
+        <div>
+            <h3>Source</h3>
+                <select name="Source" id="Source" required="required">
+                    <option value="Delhi">Delhi</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">Chennai</option>
+                </select>
+        </div>
+        <div>
+            <h3>Destination</h3>
+                <select name="Destination" id="Destination" required="required">
+                    <option value="Cochin">Cochin</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="New Delhi">New Delhi</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                </select>
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+        <div>
+            <h3>{{ prediction_text }}</h3>
+        </div>
+        </div>
+</body>

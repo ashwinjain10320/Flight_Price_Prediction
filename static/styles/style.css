@@ -1,0 +1,20 @@
+body{
+    margin: 0px;
+    background-size: cover;
+    backdrop-filter: blur(8px);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+
+
+}
+.navbar{
+    font-size:xx-large;
+    font-style:initial;
+    color: lavender;
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+    left:0px;
+    right:0px;
+    overflow: hidden;
+}
